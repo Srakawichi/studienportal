@@ -11,14 +11,13 @@ const Navbar = () => {
                         <span className="text-white text-xl font-bold cursor-pointer">Hauptmenü</span>
                     </Link>
                     <Link href="#" className="text-white hover:text-gray-200">Stundenplan</Link>
-                    <Link href="#" className="text-white hover:text-gray-200">Noten</Link>
+                    <Link href="#" className="text-white hover:text-gray-200">Notenübersicht</Link>
                     {/* Dropdownmenue */}
                     <form className="max-w-sm mx-auto">
                         <select defaultValue="DO" id="countries"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="DO">Dokumente</option>
                             <option value="US">Immatrikulationsbescheid</option>
-                            <option value="CA">Notenübersicht</option>
                             <option value="FR">Bachelorarbeit</option>
                             <option value="DE">Freistellungsantrag</option>
                             <option value="EX">Exmatrikulation</option>

@@ -1,10 +1,11 @@
+import ImageSlider from "./dashboard/slideshow";
 import Navbar from "./navigation/navbar";
 
 export default function Home() {
   return (
       <div>
-    <Navbar />
-      <p> Hello World </p>
+        <Navbar/>
+        <ImageSlider/>
       </div>
   );
 }
