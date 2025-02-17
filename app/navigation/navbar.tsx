@@ -11,7 +11,7 @@ const Navbar = () => {
                         <span className="text-white text-xl font-bold cursor-pointer">Hauptmenü</span>
                     </Link>
                     <Link href="/timetable" className="text-white hover:text-gray-200">Stundenplan</Link>
-                    <Link href="#" className="text-white hover:text-gray-200">Notenübersicht</Link>
+                    <Link href="/overviewofgrades" className="text-white hover:text-gray-200">Notenübersicht</Link>
                     {/* Dropdownmenue */}
                     <form className="max-w-sm mx-auto">
                         <select defaultValue="DO" id="countries"
