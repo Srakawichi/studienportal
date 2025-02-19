@@ -1,7 +1,6 @@
 import Navbar from "../navigation/navbar";
 import React from "react";
 
-
 type ScheduleEntry = {
     day: string;
     time: string;
@@ -22,35 +21,34 @@ const schedule: ScheduleEntry[] = [
 ];
 
 const Timetable: React.FC = () => {
+    const days = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"];
+    const times = ["08:00 - 09:30", "09:45 - 11:15", "12:00 - 13:30", "13:45 - 15:15", "15:30 - 17:00"];
+
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div className="p-6 bg-gray-100 min-h-screen flex flex-col items-center">
                 <h2 className="text-2xl font-bold mb-6 text-blue-700">Stundenplan</h2>
-                <table className="w-full max-w-4xl border-collapse shadow-lg rounded-lg overflow-hidden">
-                    <thead>
-                    <tr className="bg-blue-500 text-white">
-                        <th className="border border-blue-700 px-6 py-3">Tag</th>
-                        <th className="border border-blue-700 px-6 py-3">Uhrzeit</th>
-                        <th className="border border-blue-700 px-6 py-3">Fach</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {schedule.map((entry, index) => (
-                        <tr key={index} className="odd:bg-white even:bg-gray-200 hover:bg-blue-100 transition-colors">
-                            <td className="border border-gray-300 px-6 py-3 text-center font-semibold">{entry.day}</td>
-                            <td className="border border-gray-300 px-6 py-3 text-center">{entry.time}</td>
-                            <td className="border border-gray-300 px-6 py-3 text-center text-blue-600 font-medium">{entry.subject}</td>
-                        </tr>
+                <div className="grid grid-cols-6 gap-1 w-full max-w-5xl border border-gray-300 rounded-lg overflow-hidden">
+                    <div className="bg-blue-500 text-white p-4 text-center font-bold border-r border-gray-300">Zeit</div>
+                    {days.map(day => (
+                        <div key={day} className="bg-blue-500 text-white p-4 text-center font-bold border-r border-gray-300">{day}</div>
                     ))}
-                    </tbody>
-                </table>
+                    {times.map(time => (
+                        <>
+                            <div key={time} className="bg-gray-300 p-4 text-center font-semibold border-b border-gray-300">{time}</div>
+                            {days.map(day => {
+                                const entry = schedule.find(e => e.day === day && e.time === time);
+                                return (
+                                    <div key={day + time} className={`p-4 text-center border border-gray-300 ${entry ? 'bg-blue-100' : 'bg-white'}`}>{entry ? entry.subject : "-"}</div>
+                                );
+                            })}
+                        </>
+                    ))}
+                </div>
             </div>
         </div>
-
     );
 };
 
 export default Timetable;
-
-
