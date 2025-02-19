@@ -1,4 +1,47 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { Carousel } from "flowbite";
+import type { CarouselItem, CarouselOptions, CarouselInterface } from "flowbite";
+
 export default function ImageSlider() {
+    const carouselRef = useRef<HTMLDivElement>(null);
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    useEffect(() => {
+        if (!isClient || !carouselRef.current) return;
+
+        const items: CarouselItem[] = Array.from(
+            carouselRef.current.querySelectorAll("[data-carousel-item]")
+        ).map((el, index) => ({ position: index, el: el as HTMLElement }));
+
+        const options: CarouselOptions = {
+            defaultPosition: 0,
+            interval: 3000,
+            indicators: {
+                activeClasses: "bg-white dark:bg-gray-800",
+                inactiveClasses: "bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800",
+                items: [],
+            },
+            onNext: () => console.log("Next slider item is shown"),
+            onPrev: () => console.log("Previous slider item is shown"),
+            onChange: () => console.log("New slider item has been shown"),
+        };
+
+        const carousel: CarouselInterface = new Carousel(carouselRef.current, items, options);
+        carousel.cycle();
+
+        carouselRef.current.querySelector("[data-carousel-prev]")?.addEventListener("click", () => carousel.prev());
+        carouselRef.current.querySelector("[data-carousel-next]")?.addEventListener("click", () => carousel.next());
+    }, [isClient]);
+
+    if (!isClient) return null;
+
+
     return (
         <div id="controls-carousel" className="relative w-full" data-carousel="static">
             {/* Carousel wrapper */}
