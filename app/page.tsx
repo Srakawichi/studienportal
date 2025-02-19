@@ -3,6 +3,7 @@ import Navbar from "./navigation/navbar";
 export default function Home() {
   return (
       <div>
+          <title> Studienportal </title>
           <Navbar/>
           <div className="flex min-h-screen place-content-end">
               <div className="bg-gray-200 p-6 rounded-lg shadow-md w-[400px] h-[600px] mr-32 mt-16">
