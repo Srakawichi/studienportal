@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
     return (
-        <nav className="bg-red-800 p-4 shadow-md rounded-lg w-full">
+        <nav className="bg-red-800 p-4 shadow-md rounded-lg w-full mt-16">
             <div className="container max-w-screen-xl mx-auto flex justify-between items-center">
                 <div className="flex gap-x-8 items-center">
                     <Link href="/">
@@ -12,6 +12,7 @@ const Navbar = () => {
                     </Link>
                     <Link href="/timetable" className="text-white hover:text-gray-200">Stundenplan</Link>
                     <Link href="/overviewofgrades" className="text-white hover:text-gray-200">Notenübersicht</Link>
+                    <Link href="/courseoverview" className="text-white hover:text-gray-200">Kursübersicht</Link>
                     {/* Dropdownmenue */}
                     <form className="max-w-sm mx-auto">
                         <select defaultValue="DO" id="countries"
