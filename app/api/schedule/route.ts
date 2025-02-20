@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-const FILE_PATH = path.join(process.cwd(), "public", "schedule.json");
+const FILE_PATH = path.join(process.cwd(), "data", "schedule.json");
 
 // Stundenplan laden
 const loadSchedule = () => {
