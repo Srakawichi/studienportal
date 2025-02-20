@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -12,25 +12,42 @@ const images = [
 
 export default function SlideShow() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isFading, setIsFading] = useState(false);
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+        setIsFading(true);
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+            setIsFading(false);
+        }, 500); // Übergangsdauer
     };
 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+        setIsFading(true);
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+            setIsFading(false);
+        }, 500);
     };
+
+    // Automatischer Bildwechsel alle 7 Sekunden
+    useEffect(() => {
+        const interval = setInterval(nextSlide, 7000);
+        return () => clearInterval(interval);
+    }, [currentIndex]);
 
     return (
         <div className="relative w-full max-w-2xl mx-auto">
-            <div className="relative w-full h-64 md:h-96">
-                <Image
-                    src={images[currentIndex]}
-                    alt="Slideshow Image"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                />
+            <div className="relative w-full max-w-5xl h-80 md:h-[500px] overflow-hidden">
+                <div className={`transition-opacity duration-500 ${isFading ? "opacity-0" : "opacity-100"}`}>
+                    <Image
+                        src={images[currentIndex]}
+                        alt="Slideshow Image"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                    />
+                </div>
             </div>
             <button
                 onClick={prevSlide}
