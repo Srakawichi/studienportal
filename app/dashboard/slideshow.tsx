@@ -5,9 +5,9 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-    "/file.svg",
-    "/globe.svg",
-    "/next.svg"
+    "/Uni2.jpg",
+    "/Uni3.jpg",
+    "/Uni1.jpg"
 ];
 
 export default function SlideShow() {
@@ -27,12 +27,12 @@ export default function SlideShow() {
         setTimeout(() => {
             setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
             setIsFading(false);
-        }, 500);
+        }, 800);
     };
 
-    // Automatischer Bildwechsel alle 7 Sekunden
+    // Automatischer Bildwechsel
     useEffect(() => {
-        const interval = setInterval(nextSlide, 7000);
+        const interval = setInterval(nextSlide, 10000);
         return () => clearInterval(interval);
     }, [currentIndex]);
 

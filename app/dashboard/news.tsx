@@ -28,7 +28,7 @@ export default function NewsPage() {
     }, []);
 
     return (
-        <div className="p-4 bg-gray-100 rounded-lg">
+        <div className="p-4 bg-gray-100 rounded-lg mr-16">
             <h2 className="text-xl font-bold mb-4">Neuigkeiten</h2>
             {news.length > 0 ? (
                 news.map((item) => (

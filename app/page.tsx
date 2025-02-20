@@ -7,9 +7,9 @@ export default function Home() {
       <div>
           <title> Studienportal </title>
           <Navbar/>
-          <div className="flex gap-4 p-4">
-              <div className="w-1/2"><SlideShow/></div>
-              <div className="w-50%"><NewsPage/></div>
+          <div className="flex gap-0 p-4">
+              <div className="w-2/3"><SlideShow/></div>
+              <div className="w-1/3 -ml-16"><NewsPage/></div>
           </div>
       </div>
   );
