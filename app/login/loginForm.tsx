@@ -2,7 +2,11 @@
 "use client";
 import { useState } from 'react';
 
-const LoginForm: React.FC = () => {
+interface LoginFormProps {
+    onLoginSuccess: () => void;
+}
+
+const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [message, setMessage] = useState<string>('');
@@ -18,14 +22,16 @@ const LoginForm: React.FC = () => {
             body: JSON.stringify({ username, password }),
         });
 
-        const data = await res.json();
-        console.log(data);
-        if (res.ok) {
-            setMessage(data.message);
-            // Hier kannst du den User weiterleiten oder den Login-Zustand ändern
-        } else {
-            setMessage(data.message);
+        if (!res.ok) {
+            const errorData = await res.json();
+            setMessage(errorData.message || 'An error occurred'); // Fallback-Fehlermeldung
+            return;
         }
+
+        const data = await res.json();
+        setMessage(data.message);
+        onLoginSuccess(); // Aufruf der Funktion, wenn der Login erfolgreich ist
+
     };
 
     return (
@@ -54,3 +60,4 @@ const LoginForm: React.FC = () => {
 };
 
 export default LoginForm;
+
