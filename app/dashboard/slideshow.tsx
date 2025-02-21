@@ -4,50 +4,41 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const images = [
-    "/Uni4.jpg",
-    "/Uni3.jpg",
-    "/Uni1.jpg"
-];
+const images = ["/Uni4.jpg", "/Uni3.jpg", "/Uni1.jpg"];
 
 export default function SlideShow() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isFading, setIsFading] = useState(false);
-
-    const prevSlide = () => {
-        setIsFading(true);
-        setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-            setIsFading(false);
-        }, 500); // Übergangsdauer
-    };
 
     const nextSlide = () => {
-        setIsFading(true);
-        setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-            setIsFading(false);
-        }, 800);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
 
-    // Automatischer Bildwechsel
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    };
+
+    // Automatischer Wechsel alle 10s
     useEffect(() => {
         const interval = setInterval(nextSlide, 10000);
         return () => clearInterval(interval);
-    }, [currentIndex]);
+    }, []);
 
     return (
         <div className="relative w-full max-w-2xl mx-auto">
             <div className="relative w-full max-w-5xl h-80 md:h-[500px] overflow-hidden">
-                <div className={`transition-opacity duration-500 ${isFading ? "opacity-0" : "opacity-100"}`}>
+                {images.map((src, index) => (
                     <Image
-                        src={images[currentIndex]}
+                        key={index}
+                        src={src}
                         alt="Slideshow Image"
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-lg"
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className={`rounded-lg absolute inset-0 transition-opacity duration-700 ${
+                            index === currentIndex ? "opacity-100" : "opacity-0"
+                        }`}
+                        loading="lazy"
                     />
-                </div>
+                ))}
             </div>
             <button
                 onClick={prevSlide}
