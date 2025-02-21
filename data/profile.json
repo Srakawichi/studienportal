@@ -1,7 +1,7 @@
 {
-  "message": "Fehler beim Laden der Profildaten.",
-  "lastName": "Test",
-  "firstName": "Test2",
-  "email": "Test@gmx.com",
-  "username": "Test4"
+  "lastName": "Nachname",
+  "firstName": "Vorname",
+  "email": "E-Mail@.de",
+  "username": "Benutzername",
+  "matrikelnummer": "12345678910"
 }
