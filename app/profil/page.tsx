@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import Navbar from "../navigation/navbar";
+import LoginForm from "../login/loginForm";
+import { useAuth } from "../AuthProvider";
+
 
 const ProfilePage = () => {
     const [user, setUser] = useState({
@@ -69,54 +71,62 @@ const ProfilePage = () => {
             .catch((err) => console.error("Fehler beim Speichern:", err));
     };
 
+    const { isAuthenticated, login } = useAuth(); // Verwende useAuth
+
+    const handleLoginSuccess = () => {
+        login(); // Verwende die login-Funktion vom AuthProvider
+    };
+
     return (
         <div>
-            <Navbar/>
-            <div className="flex justify-center bg-gray-100 p-4 min-h-screen">
-                <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-md">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-4">Profil</h2>
-                    <div className="space-y-4">
-                        {Object.keys(user).map((key) => (
-                            <div key={key} className="flex items-center justify-between border p-3 rounded-lg">
-                                <span className="w-1/3 font-semibold">{fieldLabels[key]}</span>
-                                {editingField === key ? (
-                                    <div className="w-2/3">
-                                        <input
-                                            type="text"
-                                            value={tempValue}
-                                            onChange={(e) => setTempValue(e.target.value)}
-                                            className="w-full p-1 border rounded-lg"
-                                        />
-                                        {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
-                                    </div>
-                                ) : (
-                                    <span className="w-2/3 text-right">{user[key as keyof typeof user]}</span>
-                                )}
-                                {editingField === key ? (
-                                    <button
-                                        onClick={handleSave}
-                                        className="ml-2 bg-green-500 text-white px-2 py-1 rounded-lg hover:bg-green-600"
-                                    >
-                                        Speichern
-                                    </button>
-                                ) : (
-                                    <button
-                                        onClick={() => handleEdit(key)}
-                                        disabled={key === "matrikelnummer"}
-                                        className={`ml-2 px-2 py-1 rounded-lg ${
-                                            key === "matrikelnummer" ? "bg-gray-400 cursor-not-allowed" : "bg-red-800 hover:bg-red-600 text-white"
-                                        }`}
-                                    >
-                                        Ändern
-                                    </button>
-                                )}
-                            </div>
-                        ))}
+            {isAuthenticated ? (
+                <div className="flex justify-center bg-gray-100 p-4 min-h-screen">
+                    <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-md">
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Profil</h2>
+                        <div className="space-y-4">
+                            {Object.keys(user).map((key) => (
+                                <div key={key} className="flex items-center justify-between border p-3 rounded-lg">
+                                    <span className="w-1/3 font-semibold">{fieldLabels[key]}</span>
+                                    {editingField === key ? (
+                                        <div className="w-2/3">
+                                            <input
+                                                type="text"
+                                                value={tempValue}
+                                                onChange={(e) => setTempValue(e.target.value)}
+                                                className="w-full p-1 border rounded-lg"
+                                            />
+                                            {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+                                        </div>
+                                    ) : (
+                                        <span className="w-2/3 text-right">{user[key as keyof typeof user]}</span>
+                                    )}
+                                    {editingField === key ? (
+                                        <button
+                                            onClick={handleSave}
+                                            className="ml-2 bg-green-500 text-white px-2 py-1 rounded-lg hover:bg-green-600"
+                                        >
+                                            Speichern
+                                        </button>
+                                    ) : (
+                                        <button
+                                            onClick={() => handleEdit(key)}
+                                            disabled={key === "matrikelnummer"}
+                                            className={`ml-2 px-2 py-1 rounded-lg ${
+                                                key === "matrikelnummer" ? "bg-gray-400 cursor-not-allowed" : "bg-red-800 hover:bg-red-600 text-white"
+                                            }`}
+                                        >
+                                            Ändern
+                                        </button>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            ) : (
+                <LoginForm onLoginSuccess={handleLoginSuccess} />
+            )}
         </div>
-
     );
 };
 

@@ -1,11 +1,10 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
+import { useAuth } from "../AuthProvider";
 
-interface NavbarProps {
-    onLogout: () => void; // Neue Prop für die Logout-Funktion
-}
-
-const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
+const Navbar = () => {
+    const { isAuthenticated, logout } = useAuth();
     return (
         <nav className="bg-red-800 p-4 shadow-md rounded-lg w-full mt-16">
             <div className="container max-w-screen-xl mx-auto flex justify-between items-center">
@@ -39,9 +38,11 @@ const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
                         </svg>
                     </div>
                 </Link>
-                <button onClick={onLogout} className="ml-4 bg-red-500 text-white p-2 rounded">
-                    Logout
-                </button>
+                {isAuthenticated && (
+                    <button onClick={logout} className="bg-gray-700 text-white px-4 py-2 rounded">
+                        Logout
+                    </button>
+                )}
             </div>
         </nav>
     );

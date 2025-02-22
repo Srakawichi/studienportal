@@ -1,5 +1,4 @@
-// components/LoginForm.tsx
-"use client";
+"use client"; // Client-Komponente
 import { useState } from 'react';
 
 interface LoginFormProps {
@@ -24,14 +23,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
 
         if (!res.ok) {
             const errorData = await res.json();
-            setMessage(errorData.message || 'An error occurred'); // Fallback-Fehlermeldung
+            setMessage(errorData.message || 'An error occurred');
             return;
         }
 
         const data = await res.json();
         setMessage(data.message);
-        onLoginSuccess(); // Aufruf der Funktion, wenn der Login erfolgreich ist
-
+        onLoginSuccess(); // Erfolgreicher Login
     };
 
     return (
@@ -60,4 +58,3 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
 };
 
 export default LoginForm;
-
