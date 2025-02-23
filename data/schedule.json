@@ -3,10 +3,5 @@
     "day": "Donnerstag",
     "time": "11:00 - 14:00",
     "subject": "Typescript"
-  },
-  {
-    "day": "Mittwoch",
-    "time": "12:00 - 16:00",
-    "subject": "Software engineering"
   }
 ]
