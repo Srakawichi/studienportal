@@ -13,7 +13,7 @@ export default function Page() {
         <div>
             {isAuthenticated ? (
                 <div>
-                    <p>Herzlichen Glückwunsch. Wenn Sie diese Seite sehen, dann haben sie genügend Geld über!</p>
+                    <p>Herzlichen Gllückwunsch. Wenn Sie diese Seite sehen, dann haben sie genügend Geld über!</p>
                 </div>
             ) : (
                 <LoginForm onLoginSuccess={handleLoginSuccess} />
