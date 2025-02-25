@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 
 export default function CourseDetail() {
     const { id } = useParams();
-    const [course, setCourse] = useState<{ id: number; title: string; description: string } | null>(null);
+    const [course, setCourse] = useState<{ id: number; title: string; description: string; semester: string; bewertung: string; text: string} | null>(null);
 
     useEffect(() => {
         fetch(`/api/courses/${id}`)
@@ -18,7 +18,9 @@ export default function CourseDetail() {
     return (
         <div className="container mx-auto p-6">
             <h1 className="text-2xl font-bold mb-4">{course.title}</h1>
-            <p className="text-lg text-gray-700">{course.description}</p>
+            <p className="text-lg text-gray-700">{course.text}</p>
+            <br/>
+            <p className="text-lg text-gray-700">{course.bewertung}</p>
         </div>
     );
 }

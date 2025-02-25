@@ -7,7 +7,7 @@ import { useAuth } from "../AuthProvider";
 export default function CourseOverview() {
     const { isAuthenticated, login } = useAuth();
     const router = useRouter();
-    const [courses, setCourses] = useState<{ id: number; title: string; description: string }[]>([]);
+    const [courses, setCourses] = useState<{ id: number; title: string; description: string; semester: string; bewertung: string}[]>([]);
 
     useEffect(() => {
         fetch("/api/courses")
@@ -34,6 +34,7 @@ export default function CourseOverview() {
                             >
                                 <h2 className="text-lg font-semibold">{course.title}</h2>
                                 <p className="text-sm text-gray-700">{course.description}</p>
+                                <p className="text-sm text-gray-700">{course.semester}</p>
                             </div>
                         ))}
                     </div>
