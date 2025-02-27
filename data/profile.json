@@ -3,5 +3,6 @@
   "firstName": "Otto",
   "email": "E-Mail@.de",
   "username": "Manfred",
-  "matrikelnummer": "12345678910"
+  "matrikelnummer": "12345678910",
+  "profileImage": "/uploads/profile_1740669716114.jpg"
 }

@@ -128,13 +128,15 @@ const ProfilePage = () => {
                         <div className="mb-4 flex flex-col items-center">
                             <img src={profileImage} alt="Profilbild" className="w-24 h-24 rounded-full object-cover" />
                             <input type="file" accept="image/png, image/jpeg" onChange={handleImageChange} className="hidden" id="profilePic" />
-                            <label htmlFor="profilePic" className="mt-2 bg-blue-500 text-white px-2 py-1 rounded-lg cursor-pointer hover:bg-blue-600">
+                            <label htmlFor="profilePic" className="mt-2 bg-red-800 text-white px-2 py-1 rounded-lg cursor-pointer hover:bg-red-600">
                                 Ändern
                             </label>
                         </div>
                         <div className="space-y-4 w-full">
-                            {Object.keys(user).map((key) => (
-                                <div key={key} className="flex items-center justify-between border p-3 rounded-lg">
+                            {Object.keys(user)
+                                .filter((key) => key !== "profileImage") // profileImage ausblenden
+                                .map((key) => (
+                                    <div key={key} className="flex items-center justify-between border p-3 rounded-lg">
                                     <span className="w-1/3 font-semibold">{fieldLabels[key]}</span>
                                     {editingField === key ? (
                                         <div className="w-2/3">

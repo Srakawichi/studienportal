@@ -1,5 +1,7 @@
+"use server";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
+
 
 export async function POST(req) {
     try {
@@ -22,7 +24,7 @@ export async function POST(req) {
 
         // Base64 in Datei schreiben
         const base64Data = image.split(";base64,").pop();
-        await writeFile(filePath, base64Data, { encoding: "base64" });
+        await writeFile(filePath, Buffer.from(base64Data, "base64"));
 
         return new Response(JSON.stringify({ imageUrl: `/uploads/${fileName}` }), {
             status: 200,
