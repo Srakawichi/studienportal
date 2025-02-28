@@ -3,5 +3,20 @@
     "day": "Donnerstag",
     "time": "11:00 - 14:00",
     "subject": "Typescript"
+  },
+  {
+    "day": "28.02.2025",
+    "time": "10:00",
+    "subject": "Web"
+  },
+  {
+    "day": "Dienstag",
+    "time": "12:30",
+    "subject": "Deutsch"
+  },
+  {
+    "day": "",
+    "time": "",
+    "subject": ""
   }
 ]
