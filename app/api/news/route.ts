@@ -11,7 +11,8 @@ const allNews = [
     { id: 7, title: "Erfolgreicher Abschluss", content: "Glückwunsch an alle Absolventen dieses Semesters!" },
     { id: 8, title: "Neue Dozenten", content: "Wir begrüßen neue Dozenten im Fachbereich Informatik." },
     { id: 9, title: "Systemwartung", content: "Das System wird am Wochenende für Wartungsarbeiten offline sein." },
-    { id: 10, title: "Sommerfest", content: "Meldet euch für das jährliche Sommerfest an!" }
+    { id: 10, title: "Sommerfest", content: "Meldet euch für das jährliche Sommerfest an!" },
+    { id: 11, title: "Weisheit des Tages", content: "Wusseten Sie schon, der der regelmäßige Verzähr von Keksen die Lebens Erwartung um 180% steigern soll?"}
 ];
 
 

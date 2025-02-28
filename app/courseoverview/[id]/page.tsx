@@ -19,8 +19,14 @@ export default function CourseDetail() {
         <div className="container mx-auto p-6">
             <h1 className="text-2xl font-bold mb-4">{course.title}</h1>
             <p className="text-lg text-gray-700">{course.text}</p>
-            <br/>
+            <br />
             <p className="text-lg text-gray-700">{course.bewertung}</p>
+            <button
+                onClick={() => window.history.back()}
+                className="mt-6 px-4 py-2 bg-red-800 text-white rounded-lg hover:bg-red-500"
+            >
+                 zurück zur Übersicht
+            </button>
         </div>
     );
 }
