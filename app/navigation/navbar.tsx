@@ -42,7 +42,7 @@ const Navbar = () => {
                     <Link href="/courseoverview" className="text-white hover:text-gray-200">Kursübersicht</Link>
                     {/* Dropdownmenue */}
                     <form className="max-w-sm mx-auto">
-                        <select defaultValue="DO" id="options" value={selected} onChange={handleChange}
+                        <select defaultValue="" id="options" onChange={handleChange}
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="" disabled hidden>Dokumente</option>
                             <option value="immatrikulationsbescheid">Immatrikulationsbescheid</option>
