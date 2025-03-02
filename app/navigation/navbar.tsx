@@ -2,9 +2,21 @@
 import React from 'react';
 import Link from 'next/link';
 import { useAuth } from "../AuthProvider";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const Navbar = () => {
     const { isAuthenticated, logout } = useAuth();
+    const router = useRouter();
+    const [selected, setSelected] = useState("");
+
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const value = event.target.value;
+        setSelected(value);
+        if (value) {
+            router.push(`/documents/${value}`);
+        }
+    };
     return (
         <nav className="bg-red-800 p-4 shadow-md rounded-lg w-full mt-16">
             <div className="container max-w-screen-xl mx-auto flex justify-between items-center">
@@ -17,13 +29,13 @@ const Navbar = () => {
                     <Link href="/courseoverview" className="text-white hover:text-gray-200">Kursübersicht</Link>
                     {/* Dropdownmenue */}
                     <form className="max-w-sm mx-auto">
-                        <select defaultValue="DO" id="countries"
+                        <select defaultValue="DO" id="options" value={selected} onChange={handleChange}
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option value="DO">Dokumente</option>
-                            <option value="US">Immatrikulationsbescheid</option>
-                            <option value="FR">Bachelorarbeit</option>
-                            <option value="DE">Freistellungsantrag</option>
-                            <option value="EX">Exmatrikulation</option>
+                            <option value="" disabled hidden>Dokumente</option>
+                            <option value="immatrikulationsbescheid">Immatrikulationsbescheid</option>
+                            <option value="bachelorarbeit">Bachelorarbeit</option>
+                            <option value="freistellungsantrag">Freistellungsantrag</option>
+                            <option value="exmatrikulation">Exmatrikulation</option>
                         </select>
                     </form>
                 </div>

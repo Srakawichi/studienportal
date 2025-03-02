@@ -1,0 +1,18 @@
+{
+  "immatrikulationsbescheid": {
+    "title": "Immatrikulationsbescheid",
+    "description": "Dies ist Ihr offizieller Immatrikulationsbescheid, der Ihre Einschreibung an der Hochschule bestätigt. Sie benötigen dieses Dokument oft für BAföG-Anträge, Krankenkassen oder zur Vorlage bei Arbeitgebern. Den Bescheid können Sie über das Studierendenportal als PDF herunterladen oder im Studierendensekretariat beantragen. Falls Sie eine beglaubigte Kopie benötigen, wenden Sie sich bitte an das Prüfungsamt."
+  },
+  "bachelorarbeit": {
+    "title": "Bachelorarbeit",
+    "description": "Hier finden Sie Informationen zur Anmeldung und Abgabe Ihrer Bachelorarbeit. Die Anmeldung erfolgt über das Prüfungsamt und erfordert ein ausgefülltes Anmeldeformular sowie eine Bestätigung Ihres Betreuers. Die Bearbeitungszeit beginnt mit der offiziellen Anmeldung. Nach Fertigstellung müssen Sie die Arbeit fristgerecht in digitaler und gedruckter Form einreichen. Bitte beachten Sie die spezifischen Vorgaben Ihrer Fakultät bezüglich Formatierung und Plagiatsprüfung."
+  },
+  "freistellungsantrag": {
+    "title": "Freistellungsantrag",
+    "description": "Ein Freistellungsantrag ermöglicht Ihnen eine vorübergehende Beurlaubung vom Studium, z. B. aus gesundheitlichen oder familiären Gründen. Der Antrag muss mit entsprechenden Nachweisen (z. B. ärztliches Attest, Arbeitsvertrag für ein Praktikum) beim Studierendensekretariat eingereicht werden. Während einer Beurlaubung bleibt Ihr Studierendenstatus erhalten, aber Prüfungen können in der Regel nicht abgelegt werden. Informieren Sie sich frühzeitig über mögliche Auswirkungen auf BAföG und Versicherungen."
+  },
+  "exmatrikulation": {
+    "title": "Exmatrikulation",
+    "description": "Die Exmatrikulation markiert das Ende Ihrer Einschreibung an der Hochschule. Sie kann freiwillig oder automatisch nach Studienabschluss erfolgen. Zur Beantragung müssen Sie das Exmatrikulationsformular ausfüllen und ggf. eine Bestätigung der Bibliothek über die Rückgabe aller entliehenen Bücher vorlegen. Nach der Exmatrikulation erhalten Sie eine Bescheinigung, die für die Rentenversicherung oder zukünftige Bewerbungen wichtig sein kann. Denken Sie daran, sich auch bei der Krankenkasse und anderen Stellen abzumelden."
+  }
+}
