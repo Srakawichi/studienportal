@@ -22,5 +22,13 @@ export const courses = [
             "text": "Dieser Kurs führt in das Utility-First-Prinzip von Tailwind CSS ein, das eine flexible und effiziente Gestaltung von Benutzeroberflächen ermöglicht. Die Studierenden lernen, wie sie mit vordefinierten Klassen schnelle und wartbare Designs umsetzen können. Nach erfolgreichem Abschluss sind sie in der Lage, moderne und responsive Webseiten mit Tailwind CSS zu stylen.",
             "semester": "WiSe 2025",
             "bewertung": "Die Prüfung besteht zu 40% aus einer Klausur und zu 60% aus einer Projektarbeit."
+        },
+        {
+            "id": 34,
+            "title": "Test",
+            "description": "Test",
+            "text": "Test",
+            "semester": "2222",
+            "bewertung": "Test."
         }
     ];

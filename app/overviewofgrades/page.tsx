@@ -9,6 +9,7 @@ type GradeEntry = {
     grade?: number;
     credits?: number;
     attempt?: number;
+    finalFail?: boolean;
 };
 
 type GradesState = Record<number, GradeEntry>;
@@ -20,14 +21,13 @@ export default function Page() {
     const [averageGrade, setAverageGrade] = useState<number>(0);
 
     useEffect(() => {
-        // Lade die Noten vom Backend
-        fetch('/api/grades')
-            .then((response) => response.json())
-            .then((savedGrades) => {
-                setGrades(savedGrades);
-                calculateStats(savedGrades);
+        fetch("/api/grades")
+            .then((res) => res.json())
+            .then((data) => {
+                setGrades(data);
+                calculateStats(data);
             })
-            .catch((error) => console.error('Error loading grades:', error));
+            .catch((err) => console.error("Fehler beim Laden der Noten:", err));
     }, []);
 
     const handleLoginSuccess = () => {
@@ -44,23 +44,20 @@ export default function Page() {
                 [field]: newValue,
             },
         };
+        if (updatedGrades[courseId].attempt === 3 && updatedGrades[courseId].grade! > 4.0) {
+            updatedGrades[courseId].finalFail = true;
+        } else {
+            updatedGrades[courseId].finalFail = false;
+        }
 
         setGrades(updatedGrades);
-        // Speichere die Noten auf dem Server
-        fetch('/api/grades', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+
+        // API Call zum Speichern
+        fetch("/api/grades", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatedGrades),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log('Grades saved:', data);
-            })
-            .catch((error) => {
-                console.error('Error saving grades:', error);
-            });
+        }).catch((err) => console.error("Fehler beim Speichern:", err));
 
         calculateStats(updatedGrades);
     };
@@ -86,9 +83,7 @@ export default function Page() {
         setAverageGrade(count > 0 ? parseFloat((gradeSum / count).toFixed(2)) : 0);
     };
 
-    // @ts-ignore
-    // @ts-ignore
-    // @ts-ignore
+
     return (
         <div className="flex justify-center mt-6 bg-gray-100">
             {isAuthenticated ? (
@@ -109,6 +104,7 @@ export default function Page() {
                                 <th className="p-2 text-center">Credits</th>
                                 <th className="p-2 text-center">Versuch</th>
                                 <th className="p-2 text-center">Bestanden</th>
+                                <th className="p-2 text-center">Endgültig nicht bestanden</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -151,6 +147,11 @@ export default function Page() {
                                     </td>
                                     <td className="p-2 text-center text-2xl">
                                         {grades[course.id]?.grade !== undefined && grades[course.id]!.grade <= 4.0 ? "✅" : "❌"}
+                                    </td>
+                                    <td className="p-2 text-center text-2xl">
+                                        {grades[course.id]?.finalFail && (
+                                            <span className="text-red-500 font-bold">❌</span>
+                                        )}
                                     </td>
                                 </tr>
                             ))}
