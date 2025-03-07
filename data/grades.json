@@ -16,5 +16,9 @@
     "grade": 1,
     "attempt": "1",
     "finalFail": false
+  },
+  "34": {
+    "credits": 1,
+    "finalFail": false
   }
 }
