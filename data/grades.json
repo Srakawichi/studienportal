@@ -2,13 +2,13 @@
   "1": {
     "grade": 5,
     "credits": 0,
-    "attempt": "3",
+    "attempt": "",
     "finalFail": false
   },
   "2": {
     "credits": 7,
-    "grade": 1,
-    "attempt": "1",
+    "grade": 2,
+    "attempt": "2",
     "finalFail": false
   },
   "3": {
