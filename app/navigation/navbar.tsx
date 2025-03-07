@@ -10,7 +10,7 @@ const Navbar = () => {
     const { isAuthenticated, logout } = useAuth();
     const profile = profileData || { profileImage: "" };
     const router = useRouter();
-    const [selected, setSelected] = useState("");
+    const [, setSelected] = useState("");
     const [profileImage, setProfileImage] = useState<string | null>(profile.profileImage || null);
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
