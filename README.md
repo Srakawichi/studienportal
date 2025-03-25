@@ -30,7 +30,7 @@ Die Anwendung ist anschließend erreichbar unter:
 ## 🔐 Login und Profilverwaltung
 
 Beim Öffnen der App gelangst du zunächst zum **Login**.
-
+Nutzername: **admin** und passwort: **123**
 Nach erfolgreichem Login kannst du:
 
 - dein Profil anzeigen
