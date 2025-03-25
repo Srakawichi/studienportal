@@ -43,13 +43,26 @@ Die Matrikelnummer ist sichtbar, aber **nicht änderbar**.
 
 ## 📁 Projektstruktur (Auszug)
 
-| Pfad                      | Beschreibung                            |
-|---------------------------|------------------------------------------|
-| `app/page.tsx`            | Hauptseite mit Login & Profil            |
-| `login/loginForm.tsx`     | Login-Formular mit API-Anfrage           |
-| `profile.json`            | Beispiel-Userdaten (für Entwicklung)     |
-| `public/`                 | Statische Dateien wie Profilbilder       |
-| `pages/api/`              | API-Endpunkte für Login & Profil         |
+| Pfad                            | Beschreibung                                      |
+|---------------------------------|---------------------------------------------------|
+| `app/page.tsx`                  | Einstiegspunkt der App                           |
+| `app/layout.tsx`                | Layout-Komponente für globale Struktur           |
+| `app/login/`                    | Login-Formular und Login-Seite                   |
+| `app/profil/`                   | Profilseite mit Bearbeitungsfunktionen           |
+| `app/api/`                      | REST-API-Endpunkte für das Backend               |
+| └ `courses/`, `grades/` etc.    | API-Routen für Kurse, Noten, Login, Profil usw.  |
+| `app/navigation/`               | Navigations-Komponenten                         |
+| `app/dashboard/`                | Dashboard-Ansicht                                |
+| `app/documents/`                | Dokumentenseite                                  |
+| `app/courseoverview/`           | Kursübersicht                                    |
+| `app/overviewofgrades/`         | Notenübersicht                                   |
+| `app/timetable/`                | Stundenplan                                      |
+| `data/grades.json`              | Beispiel-Notendaten                              |
+| `data/profile.json`             | Beispiel-Profildaten                             |
+| `data/schedule.json`            | Beispiel-Stundenplan                             |
+| `data/users.json`               | Beispiel-Benutzerdaten                           |
+| `globals.css`                   | Globale CSS-Definitionen                         |
+| `AuthProvider.tsx`              | Authentifizierungs-Provider                      |
 
 ---
 
