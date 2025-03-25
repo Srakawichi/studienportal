@@ -72,3 +72,10 @@ Die Matrikelnummer ist sichtbar, aber **nicht änderbar**.
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Node.js](https://nodejs.org/)
+
+## 👥 Mitwirkende
+
+Dieses Projekt wurde im Rahmen eines Studienprojekts entwickelt von:
+
+- **Sinan Yurdakul** 
+- **Mihoshi Nakamura**  
