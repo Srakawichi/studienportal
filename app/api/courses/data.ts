@@ -24,11 +24,51 @@ export const courses = [
             "bewertung": "Die Prüfung besteht zu 40% aus einer Klausur und zu 60% aus einer Projektarbeit."
         },
         {
-            "id": 34,
-            "title": "Test",
-            "description": "Test",
-            "text": "Test",
-            "semester": "2222",
-            "bewertung": "Test."
+            "id": 4,
+            "title": "Datenbanken",
+            "description": "SQL und relationale Datenbanken",
+            "text": "In diesem Kurs lernen die Studierenden den Umgang mit relationalen Datenbanken und SQL. Sie verstehen Konzepte wie Normalisierung, Joins und Transaktionen. Praktische Übungen mit PostgreSQL runden das Wissen ab.",
+            "semester": "SoSe 2025",
+            "bewertung": "Die Note setzt sich zu 70% aus einer Klausur und 30% aus einer Hausarbeit zusammen."
+        },
+        {
+            "id": 5,
+            "title": "Algorithmen & Datenstrukturen",
+            "description": "Grundlagen effizienter Problemlösungen",
+            "text": "Dieser Kurs behandelt grundlegende Algorithmen wie Sortier- und Suchverfahren sowie Datenstrukturen wie Listen, Stacks und Bäume. Die Studierenden lernen, Probleme effizient zu lösen und die Laufzeit ihrer Lösungen zu analysieren.",
+            "semester": "WiSe 2025",
+            "bewertung": "100% Klausur am Ende des Semesters."
+        },
+        {
+            "id": 6,
+            "title": "Software Engineering",
+            "description": "Von der Idee zum Produkt",
+            "text": "Dieser Kurs vermittelt Methoden und Werkzeuge zur Entwicklung qualitativ hochwertiger Software. Themen wie Requirements Engineering, UML, Versionsverwaltung und agile Methoden werden behandelt.",
+            "semester": "SoSe 2026",
+            "bewertung": "50% Projektarbeit, 50% schriftliche Prüfung."
+        },
+        {
+            "id": 7,
+            "title": "IT-Sicherheit",
+            "description": "Grundlagen der Cybersicherheit",
+            "text": "Der Kurs behandelt zentrale Aspekte der IT-Sicherheit wie Verschlüsselung, Authentifizierung, Netzwerksicherheit und Sicherheitsrichtlinien. Die Studierenden lernen, Schwachstellen zu erkennen und Sicherheitsmaßnahmen zu implementieren.",
+            "semester": "WiSe 2025",
+            "bewertung": "60% Klausur, 40% praktische Übung."
+        },
+        {
+            "id": 8,
+            "title": "Künstliche Intelligenz",
+            "description": "Einführung in KI-Methoden",
+            "text": "In diesem Kurs erhalten die Studierenden einen Überblick über Grundlagen und Anwendungen der Künstlichen Intelligenz. Behandelt werden unter anderem Entscheidungsbäume, neuronale Netze und maschinelles Lernen.",
+            "semester": "SoSe 2026",
+            "bewertung": "100% Projektarbeit mit Präsentation."
+        },
+        {
+            "id": 9,
+            "title": "Webentwicklung",
+            "description": "Von HTML bis Backend",
+            "text": "Der Kurs deckt die komplette Bandbreite moderner Webentwicklung ab – von HTML, CSS und JavaScript bis hin zu Backend-Technologien und REST-APIs. Ziel ist es, eine vollständige Webanwendung umzusetzen.",
+            "semester": "WiSe 2025",
+            "bewertung": "50% Projekt, 50% schriftliche Prüfung."
         }
     ];

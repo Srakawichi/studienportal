@@ -1,12 +1,22 @@
 [
   {
-    "day": "Donnerstag",
-    "time": "11:00 - 14:00",
-    "subject": "Typescript"
+    "day": "25.03.2025",
+    "time": "12:00 - 15:00",
+    "subject": "React Basics"
   },
   {
-    "day": "Dienstag",
-    "time": "12:30",
-    "subject": "Deutsch"
+    "day": "26.03.2025",
+    "time": "9:30 - 12:00 ",
+    "subject": "Next.js Essentials"
+  },
+  {
+    "day": "26.03.2025",
+    "time": "13:00 - 15:00",
+    "subject": "TailwindCSS"
+  },
+  {
+    "day": "27.03.2025",
+    "time": "12:00 - 15:00",
+    "subject": "Algorithmen & Datenstrukturen"
   }
 ]

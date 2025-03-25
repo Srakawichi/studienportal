@@ -30,3 +30,15 @@ export async function POST(req: Request) {
     saveSchedule(schedule);
     return NextResponse.json({ message: "Kurs hinzugefügt", schedule });
 }
+
+// DELETE: Kurs löschen
+export async function DELETE(req: Request) {
+    const { index } = await req.json();
+    const schedule = loadSchedule();
+    if (index >= 0 && index < schedule.length) {
+        schedule.splice(index, 1);
+        saveSchedule(schedule);
+        return NextResponse.json({ message: "Kurs gelöscht", schedule });
+    }
+    return NextResponse.json({ message: "Ungültiger Index" }, { status: 400 });
+}

@@ -2,7 +2,7 @@
   "1": {
     "grade": 5,
     "credits": 0,
-    "attempt": "",
+    "attempt": "2",
     "finalFail": false
   },
   "2": {
@@ -19,6 +19,8 @@
   },
   "34": {
     "credits": 1,
-    "finalFail": false
+    "finalFail": false,
+    "attempt": "3",
+    "grade": 1.5
   }
 }
