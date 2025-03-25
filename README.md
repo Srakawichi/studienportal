@@ -22,3 +22,8 @@ npm wird automatisch mit Node.js installiert.
 ```bash
 git clone <REPOSITORY-URL>
 cd <projektordner>
+npm install
+npm run dev
+```
+Die Anwendung ist anschließend erreichbar unter:
+👉 http://localhost:3000
