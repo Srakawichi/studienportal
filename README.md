@@ -29,9 +29,10 @@ Die Anwendung ist anschließend erreichbar unter:
 👉 http://localhost:3000
 ## 🔐 Login und Profilverwaltung
 
-Beim Öffnen der App gelangst du zunächst zum **Login**.
-Nutzername: **admin** und passwort: **123**
-Nach erfolgreichem Login kannst du:
+Beim Öffnen der App gelangst du zunächst auf das Dashboard. Für weitere Informationen musst du dich über das **Login** anmelden.
+
+- Nutzername: **admin** und passwort: **123**
+- Nach erfolgreichem Login kannst du:
 
 - dein Profil anzeigen
 - Vorname, Nachname, E-Mail und Benutzername bearbeiten
