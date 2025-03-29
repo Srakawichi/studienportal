@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📘 Studienportal Webanwendung
 
-## Getting Started
+Dies ist eine Webanwendung zur Benutzerverwaltung für ein Studienportal. Sie basiert auf **Next.js**, **TypeScript** und **Tailwind CSS**.
 
-First, run the development server:
+---
+
+## 🔧 Voraussetzungen
+
+Um das Projekt lokal auszuführen, benötigst du:
+
+- **Node.js** (empfohlen: Version 18 oder höher)  
+  👉 [Download Node.js](https://nodejs.org/)
+
+npm wird automatisch mit Node.js installiert.
+
+---
+
+## 🚀 Projekt lokal starten
+
+### 1. Repository klonen
 
 ```bash
+git clone <REPOSITORY-URL>
+cd <projektordner>
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Die Anwendung ist anschließend erreichbar unter:
+👉 http://localhost:3000
+## 🔐 Login und Profilverwaltung
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Beim Öffnen der App gelangst du zunächst auf das Dashboard. Für weitere Informationen musst du dich über das **Login** anmelden.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Nutzername: **admin** und passwort: **123**
+- Nach erfolgreichem Login kannst du:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- dein Profil anzeigen
+- Vorname, Nachname, E-Mail und Benutzername bearbeiten
+- ein Profilbild (PNG oder JPG) hochladen
 
-## Learn More
+Die Matrikelnummer ist sichtbar, aber **nicht änderbar**.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Projektstruktur (Auszug)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Pfad                            | Beschreibung                                      |
+|---------------------------------|---------------------------------------------------|
+| `app/page.tsx`                  | Einstiegspunkt der App                           |
+| `app/layout.tsx`                | Layout-Komponente für globale Struktur           |
+| `app/login/`                    | Login-Formular und Login-Seite                   |
+| `app/profil/`                   | Profilseite mit Bearbeitungsfunktionen           |
+| `app/api/`                      | REST-API-Endpunkte für das Backend               |
+| └ `courses/`, `grades/` etc.    | API-Routen für Kurse, Noten, Login, Profil usw.  |
+| `app/navigation/`               | Navigations-Komponenten                         |
+| `app/dashboard/`                | Dashboard-Ansicht                                |
+| `app/documents/`                | Dokumentenseite                                  |
+| `app/courseoverview/`           | Kursübersicht                                    |
+| `app/overviewofgrades/`         | Notenübersicht                                   |
+| `app/timetable/`                | Stundenplan                                      |
+| `data/grades.json`              | Beispiel-Notendaten                              |
+| `data/profile.json`             | Beispiel-Profildaten                             |
+| `data/schedule.json`            | Beispiel-Stundenplan                             |
+| `data/users.json`               | Beispiel-Benutzerdaten                           |
+| `globals.css`                   | Globale CSS-Definitionen                         |
+| `AuthProvider.tsx`              | Authentifizierungs-Provider                      |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📚 Technologien
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Node.js](https://nodejs.org/)
+
+## 👥 Mitwirkende
+
+Dieses Projekt wurde im Rahmen eines Studienprojekts entwickelt von:
+
+- **Sinan Yurdakul** 
+- **Mihoshi Nakamura**  
