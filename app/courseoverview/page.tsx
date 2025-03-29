@@ -9,6 +9,7 @@ export default function CourseOverview() {
     const router = useRouter();
     const [courses, setCourses] = useState<{ id: number; title: string; description: string; semester: string; bewertung: string}[]>([]);
 
+    // Holt Kursdaten von /api/courses
     useEffect(() => {
         fetch("/api/courses")
             .then((response) => response.json())
@@ -16,6 +17,7 @@ export default function CourseOverview() {
             .catch((error) => console.error("Fehler beim Laden der Kurse:", error));
     }, []);
 
+    // Klick auf Kurs → Weiterleitung mit router.push
     const handleCourseClick = (id: number) => {
         router.push(`/courseoverview/${id}`);
     };

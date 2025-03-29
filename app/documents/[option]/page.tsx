@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import data from "../data.json"; // JSON-Daten importieren
+import data from "../data.json";
 
 export default function DocumentPage() {
     const { option } = useParams(); // Dynamischen Parameter aus URL holen

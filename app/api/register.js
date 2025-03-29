@@ -1,3 +1,4 @@
+// Funktion bleibt: Benutzerregistrierung mit JSON-Datei.
 import fs from 'fs';
 import path from 'path';
 

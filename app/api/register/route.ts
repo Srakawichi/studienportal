@@ -7,6 +7,7 @@ const usersFile = path.join(process.cwd(), 'data', 'users.json');
 export async function POST(request: Request) {
     const { username, password } = await request.json();
 
+    // Prüft, ob username und password vorhanden sind
     if (!username || !password) {
         return NextResponse.json({ message: 'Username and password are required' }, { status: 400 });
     }

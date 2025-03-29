@@ -6,6 +6,7 @@ export default function CourseDetail() {
     const { id } = useParams();
     const [course, setCourse] = useState<{ id: number; title: string; description: string; semester: string; bewertung: string; text: string} | null>(null);
 
+    // Holt Kursdaten von /api/courses/:id
     useEffect(() => {
         fetch(`/api/courses/${id}`)
             .then((response) => response.json())
@@ -15,6 +16,7 @@ export default function CourseDetail() {
 
     if (!course) return <p className="text-center mt-10">Lade Kursdetails...</p>;
 
+    // Zeigt Titel, Beschreibung (text), Bewertung
     return (
         <div className="container mx-auto p-6">
             <h1 className="text-2xl font-bold mb-4">{course.title}</h1>
