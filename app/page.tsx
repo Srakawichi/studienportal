@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <div>
             <div className="min-h-screen bg-red-50">
-                <title>Studienportal</title>
+                <title>Studienportal Yay</title>
 
                 <div className="flex gap-0 p-4">
 
